@@ -21,7 +21,7 @@ type CryptwatchClient struct {
 
 // Get: base function to access cryptwatch
 func (c *CryptwatchClient) Get(resourcePath string, params url.Values) (interface{}, error) {
-	URI := URIBase + resourcePath + params.Encode()
+	URI := URIBase + resourcePath + "?" + params.Encode()
 	resp, err := c.Client.Get(URI)
 	if err != nil {
 		return nil, err
